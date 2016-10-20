@@ -1,0 +1,21 @@
+<resources>
+
+    <style name="ItemRowPrimary" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">@color/primaryText</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ItemRowSecondary" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">@color/secondaryText</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:maxLines">3</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>
+

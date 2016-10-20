@@ -1,0 +1,10 @@
+<vector android:height="24dp" android:viewportHeight="511.999"
+    android:viewportWidth="511.999" android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="@color/colorLightPrimary" android:pathData="M423.9,213.9l-66.3,0l0,-66.3l-84.2,0l0,66.3l-66.3,0l0,84.2l66.3,0l0,66.3l84.2,0l0,-66.3l66.3,0z"/>
+    <path android:fillColor="@color/colorPrimary" android:pathData="M357.7,379.2h-84.2c-8.2,0 -14.8,-6.6 -14.8,-14.8v-51.5h-51.5c-8.2,0 -14.8,-6.6 -14.8,-14.8v-84.2c0,-8.2 6.6,-14.8 14.8,-14.8h51.5v-51.5c0,-8.2 6.6,-14.8 14.8,-14.8h84.2c8.2,0 14.8,6.6 14.8,14.8v51.5h51.5c8.2,0 14.8,6.6 14.8,14.8v84.2c0,8.2 -6.6,14.8 -14.8,14.8h-51.5v51.5C372.5,372.6 365.8,379.2 357.7,379.2zM288.3,349.6h54.6v-51.5c0,-8.2 6.6,-14.8 14.8,-14.8h51.5V228.7H357.7c-8.2,0 -14.8,-6.6 -14.8,-14.8V162.4h-54.6v51.5c0,8.2 -6.6,14.8 -14.8,14.8h-51.5v54.6h51.5c8.2,0 14.8,6.6 14.8,14.8V349.6L288.3,349.6z"/>
+    <path android:fillColor="@color/colorPrimary" android:pathData="M497.2,459.9h-63.4c-8.2,0 -14.8,-6.6 -14.8,-14.8c0,-8.2 6.6,-14.8 14.8,-14.8h48.6V81.8H148.7v348.4h208.7c8.2,0 14.8,6.6 14.8,14.8c0,8.2 -6.6,14.8 -14.8,14.8H133.9c-8.2,0 -14.8,-6.6 -14.8,-14.8V67c0,-8.2 6.6,-14.8 14.8,-14.8h363.3c8.2,0 14.8,6.6 14.8,14.8v378.1C512,453.2 505.4,459.9 497.2,459.9z"/>
+    <path android:fillColor="@color/colorPrimary" android:pathData="M130.2,176.4H69.5c-8.2,0 -14.8,-6.6 -14.8,-14.8s6.6,-14.8 14.8,-14.8h60.7c8.2,0 14.8,6.6 14.8,14.8S138.4,176.4 130.2,176.4z"/>
+    <path android:fillColor="@color/colorPrimary" android:pathData="M130.2,365.3H69.5c-8.2,0 -14.8,-6.6 -14.8,-14.8c0,-8.2 6.6,-14.8 14.8,-14.8h60.7c8.2,0 14.8,6.6 14.8,14.8C145,358.6 138.4,365.3 130.2,365.3z"/>
+    <path android:fillColor="@color/colorLightPrimary" android:pathData="M14.8,84.1h54.7v343.7h-54.7z"/>
+    <path android:fillColor="@color/colorPrimary" android:pathData="M69.5,442.7H14.8C6.6,442.7 0,436 0,427.9V84.1c0,-8.2 6.6,-14.8 14.8,-14.8h54.7c8.2,0 14.8,6.6 14.8,14.8v343.7C84.3,436 77.7,442.7 69.5,442.7zM29.6,413h25V99H29.6V413z"/>
+</vector>
