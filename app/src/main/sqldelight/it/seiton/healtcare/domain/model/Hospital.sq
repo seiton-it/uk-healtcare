@@ -1,0 +1,43 @@
+CREATE TABLE hospital (
+  id INTEGER AS Integer NOT NULL PRIMARY KEY ,
+  website TEXT NOT NULL,
+  subType TEXT NOT NULL,
+  sector TEXT NOT NULL,
+  postcode TEXT NOT NULL,
+  phone TEXT NOT NULL,
+  partialPostcode TEXT NOT NULL,
+  parentOdsCode TEXT NOT NULL,
+  parentName TEXT NOT NULL,
+  organisationType TEXT NOT NULL,
+  organisationStatus TEXT NOT NULL,
+  organisationName TEXT NOT NULL,
+  organisationNameLowercase TEXT NOT NULL,
+  organisationFirstChar TEXT NOT NULL,
+  organisationCode TEXT NOT NULL,
+  latitude REAL NOT NULL,
+  latRadSin REAL NOT NULL,
+  latRadCos REAL NOT NULL,
+  longitude REAL NOT NULL,
+  lonRadSin REAL NOT NULL,
+  lonRadCos REAL NOT NULL,
+  pimsManaged INTEGER AS Boolean DEFAULT 0 NOT NULL,
+  fax TEXT NOT NULL,
+  email TEXT NOT NULL,
+  county TEXT NOT NULL,
+  city TEXT NOT NULL,
+  cityLowercase TEXT NOT NULL,
+  cityFirstChar TEXT NOT NULL,
+  fullAddress TEXT NOT NULL,
+  address1 TEXT NOT NULL,
+  address2 TEXT NOT NULL,
+  address3 TEXT NOT NULL
+);
+
+-- Further SQL statements are proceeded by an identifier. This will be used to name the constant
+-- in the generated Java code.
+select_by_id:
+SELECT * FROM hospital WHERE id = ?;
+
+select_all:
+SELECT * FROM hospital;
+

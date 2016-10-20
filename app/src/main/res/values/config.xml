@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Network-->
+    <string name="endpoint">https://data.gov.uk/data/api/service/</string>
+    <integer name="read_timeout_sec">10</integer>
+    <integer name="write_timeout_sec">10</integer>
+    <integer name="connect_timeout_sec">10</integer>
+
+    <integer name="database_version">1</integer>
+    <string name="database_name">healtcare.db</string>
+
+    <!--6 hours-->
+    <integer name="sync_frequency">21600</integer>
+    <string name="sync_account_name">it.seiton.healtcare.account</string>
+    <string name="sync_content_provider">it.seiton.healtcare.contentProvider</string>
+
+</resources>

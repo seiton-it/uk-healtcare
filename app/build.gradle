@@ -1,0 +1,123 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'com.squareup.sqldelight'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
+
+    signingConfigs {
+        healtcare {
+            storeFile file('healtcare.keystore')
+            storePassword 'android'
+            keyAlias 'android'
+            keyPassword 'android'
+        }
+    }
+
+    defaultConfig {
+        applicationId "it.seiton.healtcare"
+        minSdkVersion 16
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+
+        signingConfig signingConfigs.healtcare
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix '.debug'
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        internal.java.srcDirs += 'src/internal/kotlin'
+        internalDebug.java.srcDirs += 'src/internalDebug/kotlin'
+        internalRelease.java.srcDirs += 'src/internalRelease/kotlin'
+        production.java.srcDirs += 'src/production/kotlin'
+        productionDebug.java.srcDirs += 'src/productionDebug/kotlin'
+        productionRelease.java.srcDirs += 'src/productionRelease/kotlin'
+
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
+
+    productFlavors {
+        internal {
+            applicationId 'it.seiton.healtcare.internal'
+        }
+        production {
+            applicationId 'it.seiton.healtcare'
+        }
+    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+    }
+}
+
+kapt {
+    generateStubs = true
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    compile "com.android.support:appcompat-v7:$support_version"
+    compile "com.android.support:recyclerview-v7:$support_version"
+    compile "com.android.support:cardview-v7:$support_version"
+    compile "com.android.support:design:$support_version"
+
+    compile "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+
+    compile "com.squareup.okhttp3:okhttp:$okhttp_version"
+    compile "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    compile "com.squareup.retrofit2:retrofit:$retrofit_version"
+    compile "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    compile "com.squareup.retrofit2:adapter-rxjava:$retrofit_version"
+    compile "com.squareup.sqlbrite:sqlbrite:$brite_version"
+
+    compile "io.reactivex:rxjava:$rxjava_version"
+    compile "io.reactivex:rxandroid:$rxandroid_version"
+
+    compile "com.google.code.gson:gson:$gson_version"
+    kapt "com.ryanharter.auto.value:auto-value-gson:$gson_auto_value_version"
+    provided "com.ryanharter.auto.value:auto-value-gson:$gson_auto_value_version"
+
+    internalCompile "com.facebook.stetho:stetho:$stetho_version"
+    internalCompile "com.facebook.stetho:stetho-okhttp3:$stetho_version"
+    internalCompile "com.squareup.leakcanary:leakcanary-android:$leakcanary_version"
+    testCompile "com.squareup.leakcanary:leakcanary-android-no-op:$leakcanary_version"
+
+    compile "com.jakewharton.timber:timber:$timber_version"
+    compile "com.jakewharton.threetenabp:threetenabp:$threetenabp_version"
+    compile 'com.futuremind.recyclerfastscroll:fastscroll:0.2.4'
+
+    compile 'com.mikepenz:crossfader:1.5.0@aar'
+    compile 'com.mikepenz:crossfadedrawerlayout:1.0.0@aar'
+    compile('com.mikepenz:materialdrawer:5.6.0@aar') {
+        transitive = true
+    }
+
+    testCompile "junit:junit:$junit_version"
+
+
+    debugCompile project(path: ':library', configuration: "debug")
+    releaseCompile project(path: ':library', configuration: "release")
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
