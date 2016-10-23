@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@id/recyclerLoadingContainer"
+        style="@style/RecyclerInfoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/loadingSwitcher"
+            android:layout_width="@dimen/custom_recycler_info_panel_image_size"
+            android:layout_height="@dimen/custom_recycler_info_panel_image_size"
+            android:layout_centerInParent="true" />
+
+        <TextView
+            android:id="@+id/loadingMessage"
+            style="@style/TextViewInfoContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/loadingSwitcher"
+            android:layout_toLeftOf="@+id/loadingDots"
+            android:layout_toStartOf="@+id/loadingDots"
+            tools:text="Loading" />
+
+        <pl.tajchert.sample.DotsTextView
+            android:id="@+id/loadingDots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/loadingMessage"
+            android:layout_alignBottom="@+id/loadingMessage"
+            android:layout_marginLeft="4dp"
+            android:layout_toEndOf="@+id/loadingSwitcher"
+            android:layout_toRightOf="@+id/loadingSwitcher"
+            android:gravity="center_horizontal"
+            android:text="@string/loading_message"
+            app:autoplay="false"
+            app:period="2000" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@id/recyclerErrorContainer"
+        style="@style/RecyclerInfoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/errorImage"
+            android:layout_width="@dimen/custom_recycler_info_panel_image_size"
+            android:layout_height="@dimen/custom_recycler_info_panel_image_size"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_cancel" />
+
+        <TextView
+            style="@style/TextViewInfoContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/errorImage"
+            android:gravity="center_horizontal"
+            android:text="@string/error_message" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@id/recyclerEmptyContainer"
+        style="@style/RecyclerInfoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/emptyImage"
+            android:layout_width="@dimen/custom_recycler_info_panel_image_size"
+            android:layout_height="@dimen/custom_recycler_info_panel_image_size"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_stethoscope" />
+
+        <TextView
+            style="@style/TextViewInfoContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/emptyImage"
+            android:gravity="center_horizontal"
+            android:text="@string/empty_message" />
+    </RelativeLayout>
+
+
+</merge>

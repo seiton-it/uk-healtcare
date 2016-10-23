@@ -1,13 +1,14 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 24
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
 
@@ -58,6 +59,7 @@ dependencies {
     compile "io.reactivex:rxandroid:$rxandroid_version"
 
     debugCompile "com.squareup.leakcanary:leakcanary-android:$leakcanary_version"
+    compile 'com.github.tajchert:WaitingDots:0.3.2'
 
 
     testCompile 'junit:junit:4.12'

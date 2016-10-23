@@ -6,25 +6,33 @@ import android.view.MenuItem
 import android.view.View
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
+import it.seiton.healtcare.AppInfoService
+import it.seiton.healtcare.HealtcareComponent
 import it.seiton.healtcare.R
 import it.seiton.healtcare.ui.main.clinics.*
 import it.seiton.healtcare.ui.main.hospitals.HospitalsListFragment
+import it.seiton.library.infrastructure.di.Injector
 import it.seiton.library.ui.activity.BaseActivity
 import it.seiton.library.ui.fragment.BaseFragment
 import kotlinx.android.synthetic.main.activity_main.*
+import javax.inject.Inject
 
 /**
  * Created by lukasw44 on 17/10/2016.
  */
 class MainActivity : BaseActivity(),  Drawer.OnDrawerItemClickListener {
 
+    @Inject
+    lateinit var appInfo : AppInfoService
+
     lateinit var navigation: MainNavigation
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Injector.obtain(this.applicationContext, HealtcareComponent::class.java).inject(this)
 
-        navigation = MainNavigation(this, savedInstanceState)
+        navigation = MainNavigation(this,appInfo,  savedInstanceState)
         navigation.setToolbar(this, toolbar)
 
         if (savedInstanceState == null) {

@@ -18,6 +18,7 @@ import kotlinx.android.synthetic.main.fragment_hospitals_list.*
  */
 class HospitalsListFragment : BaseMvpFragment<HospitalListView, HospitalListPresenter>(), HospitalListView {
 
+
     lateinit var hospitalAdapter: HospitalAdapter
 
     override fun layoutResId(): Int = R.layout.fragment_hospitals_list
@@ -76,6 +77,22 @@ class HospitalsListFragment : BaseMvpFragment<HospitalListView, HospitalListPres
         hospitalDetailsPanel.showHospital(item)
         btFab.initAction(item)
         tvOrganisationName.text = item.organisationName
+    }
+
+    override fun showError(errorId: Int) {
+        recyclerInfoPanel.showError(context.resources.getString(errorId))
+    }
+
+    override fun showLoading() {
+        recyclerInfoPanel.showLoading()
+    }
+
+    override fun showEmpty() {
+        recyclerInfoPanel.showEmpty()
+    }
+
+    override fun showList() {
+        recyclerInfoPanel.showList()
     }
 
     private fun ensureRecyclerHasAdapter() {

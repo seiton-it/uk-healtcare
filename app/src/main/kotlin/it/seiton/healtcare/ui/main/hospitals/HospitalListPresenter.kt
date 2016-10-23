@@ -16,6 +16,11 @@ import timber.log.Timber
  */
 class HospitalListPresenter(val hospitalService: HospitalsApplicationService, val appInfo: AppInfoService) : BaseRxPresenter<HospitalListView>() , OnHospitalInfoClickListener{
 
+    override fun onTakeView(v: HospitalListView) {
+        super.onTakeView(v)
+        v.showLoading()
+    }
+
     override fun onActivityCreated() {
         super.onActivityCreated()
 
@@ -23,18 +28,26 @@ class HospitalListPresenter(val hospitalService: HospitalsApplicationService, va
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         { n ->
-                            Timber.d("Get All Hospitals size: ${n.size}, first: ${n.first()}")
-                            Timber.i("View is null ? ${view == null}")
                             view?.let {it->
-                                it.showHospitals(n)
-                                if(isTabletAndLandscape()){
-                                    it.showHospitalDetails(n.first())
+                                if(n.isNotEmpty()){
+                                    it.showList()
+                                    it.showHospitals(n)
+                                    if(isTabletAndLandscape()){
+                                        it.showHospitalDetails(n.first())
+                                    }
+                                }else{
+                                    it.showEmpty()
                                 }
                             }
                         },
-                        { e -> Timber.e(e, "Damn ... ") },
+                        { e ->
+                            view?.let {it->
+                                it.showError(R.string.loading_error)
+                            }
+                            Timber.e(e, "Error while loading hospitals list ... ")
+                        },
                         {
-                            Timber.i("Completed")
+                            Timber.d("Complete loading hospitals list")
                         }
                 ))
     }
