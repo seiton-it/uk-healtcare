@@ -6,79 +6,79 @@ import android.view.View
 import it.seiton.common.ui.list.DividerItemDecoration
 import it.seiton.healtcare.HealtcareComponent
 import it.seiton.healtcare.R
-import it.seiton.healtcare.application.HospitalsApplicationService
 import it.seiton.healtcare.domain.model.HospitalEntity
 import it.seiton.library.infrastructure.di.Injector
-import it.seiton.library.ui.BaseFragment
+import it.seiton.library.ui.fragment.BaseMvpFragment
 import it.seiton.library.ui.recycler.OnItemClickListener
 import it.seiton.library.ui.safeIsRtl
 import kotlinx.android.synthetic.main.fragment_hospitals_list.*
-import rx.android.schedulers.AndroidSchedulers
-import rx.subscriptions.CompositeSubscription
-import timber.log.Timber
-import javax.inject.Inject
 
 /**
  * Created by lukasw44 on 19/10/2016.
  */
-class HospitalsListFragment : BaseFragment() {
-
-    @Inject
-    lateinit var hospitalService: HospitalsApplicationService
-
-    val compositeSubscription: CompositeSubscription = CompositeSubscription()
+class HospitalsListFragment : BaseMvpFragment<HospitalListView, HospitalListPresenter>(), HospitalListView {
 
     lateinit var hospitalAdapter: HospitalAdapter
 
     override fun layoutResId(): Int = R.layout.fragment_hospitals_list
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        Injector.obtain(context.applicationContext, HealtcareComponent::class.java).inject(this)
+    override fun onCreatePresenter(): HospitalListPresenter {
+        return Injector.obtain(context.applicationContext, HealtcareComponent::class.java).hospitalListPresenter()
+    }
 
+    override fun onCreateFragment(savedInstanceState: Bundle?) {
+        super.onCreateFragment(savedInstanceState)
         hospitalAdapter = HospitalAdapter(object : OnItemClickListener<HospitalEntity> {
-
+            override fun onListItemClick(position: Int, item: HospitalEntity) {
+                presenter.onItemClick(item)
+            }
         })
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         val linearLayout = LinearLayoutManager(context)
         rvRecyclerView.apply {
             layoutManager = linearLayout
             rvRecyclerView.setHasFixedSize(true)
             addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL_LIST, 0.0f, safeIsRtl()))
         }
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
         ensureRecyclerHasAdapter()
 
-        fastScroll.setRecyclerView(rvRecyclerView)
+        fastScroll?.let{it->
+            it.setRecyclerView(rvRecyclerView)
+        }
 
-        val hospitalSubscription = hospitalService.getAllHospitals()
-                .observeOn(AndroidSchedulers.mainThread())
-                .doOnNext(hospitalAdapter)
-                .subscribe(
-                        { n ->
-                            Timber.d("Get All Hospitals size: ${n.size}, first: ${n.first()}")
-                        },
-                        { e -> Timber.e(e, "Damn ... ") },
-                        {
-                            Timber.i("Completed")
-                        }
-                )
+        hospitalDetailsPanel?.let{it->
+            it.listener = presenter
+        }
 
-        compositeSubscription.add(hospitalSubscription)
+        btFab?.let {
+            btFab.listener = presenter
+        }
     }
 
-    override fun onPause() {
-        super.onPause()
-        compositeSubscription.unsubscribe()
+    override fun onDestroyView() {
+        hospitalDetailsPanel?.let{it->
+            it.listener = null
+        }
+        btFab?.let {
+            btFab.listener = null
+        }
+        super.onDestroyView()
     }
 
-    private fun ensureRecyclerHasAdapter(){
+    override fun showHospitals(items: List<HospitalEntity>) {
+        hospitalAdapter.addAll(items)
+    }
+
+    override fun showHospitalDetails(item: HospitalEntity) {
+        hospitalDetailsPanel.showHospital(item)
+        btFab.initAction(item)
+        tvOrganisationName.text = item.organisationName
+    }
+
+    private fun ensureRecyclerHasAdapter() {
         if (rvRecyclerView.adapter == null) {
             rvRecyclerView.adapter = hospitalAdapter
         }

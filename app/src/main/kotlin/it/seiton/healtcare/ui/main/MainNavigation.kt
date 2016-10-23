@@ -53,6 +53,8 @@ class MainNavigation(activity: MainActivity, savedInstanceState: Bundle?) {
                 .withOnDrawerItemClickListener(activity)
                 // build only the view of the Drawer (don't inflate it automatically in our layout which is done with .build())
                 .build()
+
+
     }
 
     fun saveInstanceState(outState: Bundle?): Bundle {

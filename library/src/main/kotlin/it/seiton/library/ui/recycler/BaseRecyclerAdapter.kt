@@ -4,12 +4,13 @@ import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import it.seiton.library.domain.model.BaseEntity
 import java.util.*
 
 /**
  * Created by lukasw44 on 19/10/2016.
  */
-abstract class BaseRecyclerAdapter<E, VH : RecyclerView.ViewHolder>(items: ArrayList<E>, stableId: Boolean = true) : RecyclerView.Adapter<VH>() {
+abstract class BaseRecyclerAdapter<E : BaseEntity, VH : RecyclerView.ViewHolder>(items: ArrayList<E>, stableId: Boolean = true) : RecyclerView.Adapter<VH>() {
 
     val items: ArrayList<E>
 
@@ -21,11 +22,11 @@ abstract class BaseRecyclerAdapter<E, VH : RecyclerView.ViewHolder>(items: Array
 
     var notifyOnChange = true
 
-    constructor(context: Context) : this(ArrayList())
+    constructor() : this(ArrayList())
 
     init {
         this.items = items
-        //setHasStableIds(stableId)
+        setHasStableIds(stableId)
     }
 
     final override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
@@ -41,6 +42,8 @@ abstract class BaseRecyclerAdapter<E, VH : RecyclerView.ViewHolder>(items: Array
     fun getItem(position: Int): E = items[position]
 
     fun getPosition(item: E) = items.indexOf(item)
+
+    override fun getItemId(position: Int): Long = items[position].id.toLong()
 
     fun add(item: E) {
         var pos: Int = -1

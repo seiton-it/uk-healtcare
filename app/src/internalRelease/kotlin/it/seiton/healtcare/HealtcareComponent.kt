@@ -6,11 +6,12 @@ import it.seiton.healtcare.domain.DomainModule
 import it.seiton.healtcare.infrastructure.ReleaseInfrastructureModule
 import it.seiton.healtcare.infrastructure.di.ApplicationScope
 import it.seiton.healtcare.infrastructure.sync.HealtcareSyncAdapter
+import it.seiton.healtcare.ui.UiModule
 
 /**
  * Created by lukasw44 on 17/10/2016.
  */
-@Component(modules = arrayOf(AppModule::class, DomainModule::class, ApplicationServiceModule::class, ReleaseInfrastructureModule::class))
+@Component(modules = arrayOf(AppModule::class, UiModule::class, DomainModule::class, ApplicationServiceModule::class, ReleaseInfrastructureModule::class))
 @ApplicationScope
 interface HealtcareComponent : HealtcareDependencies {
 

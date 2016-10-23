@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/llAddressContainer"
+        style="@style/DetailsItemContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/addressImage"
+            style="@style/DetailsItemImage"
+            android:layout_width="@dimen/custom_hospital_details_item_details_image_size"
+            android:layout_height="@dimen/custom_hospital_details_item_details_image_size"
+            android:src="@drawable/ic_home" />
+
+        <TextView
+            android:id="@+id/tvCityAndCounty"
+            style="@style/DetailsItemAddressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvAddress"
+            android:layout_alignStart="@+id/tvAddress"
+            android:layout_below="@+id/tvAddress"
+            tools:text="London" />
+
+        <TextView
+            android:id="@+id/tvPostcode"
+            style="@style/DetailsItemAddressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvCityAndCounty"
+            android:layout_alignStart="@+id/tvCityAndCounty"
+            android:layout_below="@+id/tvCityAndCounty"
+            tools:text="GU17" />
+
+        <TextView
+            android:id="@+id/tvAddress"
+            style="@style/DetailsItemAddressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="48dp"
+            android:layout_marginStart="48dp"
+            tools:text="Hospital address" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llPhoneContainer"
+        style="@style/DetailsItemContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            style="@style/DetailsItemImage"
+            android:layout_width="@dimen/custom_hospital_details_item_details_image_size"
+            android:layout_height="@dimen/custom_hospital_details_item_details_image_size"
+            android:src="@drawable/ic_emergency" />
+
+        <TextView
+            android:id="@+id/tvPhone"
+            style="@style/DetailsItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            tools:text="234234234234234" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llEmailContainer"
+        style="@style/DetailsItemContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            style="@style/DetailsItemImage"
+            android:layout_width="@dimen/custom_hospital_details_item_details_image_size"
+            android:layout_height="@dimen/custom_hospital_details_item_details_image_size"
+            android:src="@drawable/ic_mail" />
+
+        <TextView
+            android:id="@+id/tvEmail"
+            style="@style/DetailsItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            tools:text="test@localhost.com" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llWebsiteContainer"
+        style="@style/DetailsItemContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            style="@style/DetailsItemImage"
+            android:layout_width="@dimen/custom_hospital_details_item_details_image_size"
+            android:layout_height="@dimen/custom_hospital_details_item_details_image_size"
+            android:src="@drawable/ic_planet_earth" />
+
+        <TextView
+            android:id="@+id/tvWebsite"
+            style="@style/DetailsItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            tools:text="www.localhost.com" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llFaxContainer"
+        style="@style/DetailsItemContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            style="@style/DetailsItemImage"
+            android:layout_width="@dimen/custom_hospital_details_item_details_image_size"
+            android:layout_height="@dimen/custom_hospital_details_item_details_image_size"
+            android:src="@drawable/ic_print" />
+
+        <TextView
+            android:id="@+id/tvFax"
+            style="@style/DetailsItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            tools:text="tast.fax.com" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSectorContainer"
+        style="@style/DetailsItemContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            style="@style/DetailsItemImage"
+            android:layout_width="@dimen/custom_hospital_details_item_details_image_size"
+            android:layout_height="@dimen/custom_hospital_details_item_details_image_size"
+            android:src="@drawable/ic_hospital" />
+
+        <TextView
+            android:id="@+id/tvSector"
+            style="@style/DetailsItemText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            tools:text="Independent Sector" />
+
+    </LinearLayout>
+
+</LinearLayout>

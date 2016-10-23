@@ -9,4 +9,6 @@ import rx.Observable
 interface HospitalsApplicationService {
 
     fun getAllHospitals(): Observable<List<HospitalEntity>>
+
+    fun getHospital(id: Int): Observable<HospitalEntity?>
 }

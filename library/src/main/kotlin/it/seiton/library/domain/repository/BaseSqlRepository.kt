@@ -44,10 +44,11 @@ open class BaseSqlRepository<E : BaseEntity, out M : EntityMapper<*, E>>(val dat
         return database.createQuery(tableName, selectById, id.toString())
                 .map { query ->
                     val cursor: Cursor? = query.run()
-                    if (cursor != null) {
+                    if (cursor != null && cursor.moveToNext()) {
                         mapper.mapToEntity(cursor)
+                    }else{
+                        null
                     }
-                    null
                 }
     }
 

@@ -2,11 +2,10 @@
 <it.seiton.healtcare.ui.main.hospitals.HospitalItemRowView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="120dp"
+    android:layout_height="124dp"
     android:background="?android:attr/selectableItemBackground"
     android:orientation="vertical"
     android:padding="16dp">
-
 
     <TextView
         android:id="@+id/tvName"
@@ -48,6 +47,5 @@
         android:layout_alignStart="@+id/tvCityAndCounty"
         android:layout_below="@+id/tvCityAndCounty"
         tools:text="GU17" />
-
 
 </it.seiton.healtcare.ui.main.hospitals.HospitalItemRowView>

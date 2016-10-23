@@ -21,4 +21,11 @@ class AppModule(val app: HealtcareApp) {
     fun provideGlobalConfig(): Config {
         return Config(app)
     }
+
+    @Provides
+    @ApplicationScope
+    fun provideAppInfoService(config: Config): AppInfoService {
+        return AppInfoService(app, config)
+    }
+
 }

@@ -3,5 +3,4 @@
     android:src="@drawable/header_background"
     android:tileMode="repeat"
     android:alpha="0.3"
-
     />

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/dividerColor">
+
+    </View>
+
+    <RelativeLayout
+        android:id="@+id/detailsPanel"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:orientation="vertical">
+
+
+        <it.seiton.healtcare.ui.main.hospitals.HospitalFloatingActionButton
+            android:id="@+id/btFab"
+            android:layout_width="@dimen/fab_button_size"
+            android:layout_height="@dimen/fab_button_size"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            app:layout_anchor="@id/hospitalDetailsPanel"
+            app:layout_anchorGravity="bottom|right|end"
+            tools:src="@drawable/ic_telephone_white" />
+
+        <TextView
+            android:id="@+id/tvOrganisationName"
+            android:textStyle="bold"
+            android:textColor="@color/primaryText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textSize="26sp"
+            tools:text="Hospital Name" />
+
+        <it.seiton.healtcare.ui.main.hospitals.HospitalDetailsPanel
+            android:id="@+id/hospitalDetailsPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tvOrganisationName"
+            android:layout_marginTop="24dp"
+            android:orientation="vertical">
+
+        </it.seiton.healtcare.ui.main.hospitals.HospitalDetailsPanel>
+
+    </RelativeLayout>
+</LinearLayout>

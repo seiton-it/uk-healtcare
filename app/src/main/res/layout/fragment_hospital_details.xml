@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="192dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+        <net.opacapp.multilinecollapsingtoolbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleTextAppearance="@style/TextAppearance.ExpandedTitle"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:maxLines="3">
+
+            <ImageView
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="40dp"
+                android:alpha="0.2"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_hospital_white"
+                app:layout_collapseMode="parallax" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:navigationIcon="?attr/homeAsUpIndicator" />
+
+        </net.opacapp.multilinecollapsingtoolbar.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <it.seiton.healtcare.ui.main.hospitals.HospitalDetailsPanel
+            android:id="@+id/hospitalDetailsPanel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/hospital_details_fragment_details_panel_margin_top">
+
+        </it.seiton.healtcare.ui.main.hospitals.HospitalDetailsPanel>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <it.seiton.healtcare.ui.main.hospitals.HospitalFloatingActionButton
+        android:id="@+id/btFab"
+        android:layout_width="@dimen/fab_button_size"
+        android:layout_height="@dimen/fab_button_size"
+        android:layout_margin="@dimen/fab_margin"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        app:layout_anchor="@id/appbar"
+        app:layout_anchorGravity="bottom|right|end"
+        tools:src="@drawable/ic_telephone_white"
+        />
+
+</android.support.design.widget.CoordinatorLayout>
