@@ -4,8 +4,8 @@ Show all hospitals, Social Care Location, Pharmacies etc in UK
 
 The purpose of the project is create and show a complex (at least in architecture) project entirely written using Kotlin.
 
-<p align="left" class="image">
-  <img src="uk-healtcare-phone.gif" alt="Sample" />
+<p align="left" >
+  <img src="uk-healtcare-phone.gif" alt="Sample" width="260"/>
 </p>
 
 Icons 
@@ -26,10 +26,3 @@ Libraries
  * FastScroll - https://github.com/FutureMind/recycler-fast-scroll
  * Timber - http://github.com/JakeWharton/timber
  * LeakCanary - http://github.com/square/leakcanary
-<style>
-    .image {
-       
-        max-width: 260px;
-      
-    }
-</style>
