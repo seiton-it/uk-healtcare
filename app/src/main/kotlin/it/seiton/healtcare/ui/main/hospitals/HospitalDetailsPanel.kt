@@ -31,6 +31,7 @@ open class HospitalDetailsPanel : LinearLayout {
         tvCityAndCounty.text = hospital.cityAndCounty
         tvPostcode.text = hospital.postcode
 
+        llAddressContainer.visible()
         llAddressContainer.setOnClickListener { listener?.onAddressItemClick(hospital) }
 
         if (hospital.phone.isNotEmpty()) {

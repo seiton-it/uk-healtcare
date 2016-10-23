@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="recyclerErrorContainer" type="id">recyclerErrorContainer</item>
+    <item name="recyclerLoadingContainer" type="id">recyclerLoadingContainer</item>
+    <item name="recyclerViewContainer" type="id">recyclerViewContainer</item>
+    <item name="recyclerEmptyContainer" type="id">recyclerEmptyContainer</item>
+</resources>

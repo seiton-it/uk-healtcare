@@ -20,6 +20,8 @@ allprojects {
         jcenter()
         maven { url 'https://maven.fabric.io/public' }
         mavenCentral()
+        maven { url "https://jitpack.io" }
+
     }
 }
 

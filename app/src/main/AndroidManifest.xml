@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
     package="it.seiton.healtcare">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -22,6 +24,7 @@
         android:name=".HealtcareApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
+        tools:replace="android:label"
         android:label="@string/application_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">

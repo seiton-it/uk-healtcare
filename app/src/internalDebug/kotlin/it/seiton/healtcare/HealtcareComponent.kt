@@ -7,6 +7,7 @@ import it.seiton.healtcare.infrastructure.DebugInfrastructureModule
 import it.seiton.healtcare.infrastructure.di.ApplicationScope
 import it.seiton.healtcare.infrastructure.sync.HealtcareSyncAdapter
 import it.seiton.healtcare.ui.UiModule
+import it.seiton.healtcare.ui.main.MainActivity
 import it.seiton.healtcare.ui.main.hospitals.HospitalDetailsFragment
 import it.seiton.healtcare.ui.main.hospitals.HospitalsListFragment
 
@@ -23,6 +24,8 @@ interface HealtcareComponent : HealtcareDebugDependencies {
 
     fun inject(hospitalDetailsFragment: HospitalDetailsFragment)
 
+    fun  inject(mainActivity: MainActivity)
+
     companion object Initializer {
 
         fun init(healtcareApp: HealtcareApp): HealtcareComponent {
@@ -31,5 +34,4 @@ interface HealtcareComponent : HealtcareDebugDependencies {
                     .build()
         }
     }
-
 }

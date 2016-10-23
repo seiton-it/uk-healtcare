@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="RecyclerInfoPanelView">
+        <attr name="recyclerViewId" format="integer" />
+        <attr name="loadingDrawableId" format="reference"/>
+        <attr name="loadingMessage" format="string|reference"/>
+    </declare-styleable>
+
+</resources>

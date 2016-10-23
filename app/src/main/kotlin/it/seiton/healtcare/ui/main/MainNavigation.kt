@@ -7,12 +7,13 @@ import android.support.v7.widget.Toolbar
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.DrawerBuilder
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
+import it.seiton.healtcare.AppInfoService
 import it.seiton.healtcare.R
 
 /**
  * Created by lukasw44 on 20/10/2016.
  */
-class MainNavigation(activity: MainActivity, savedInstanceState: Bundle?) {
+class MainNavigation(activity: MainActivity,appInfo: AppInfoService, savedInstanceState: Bundle?) {
 
     @Retention(AnnotationRetention.SOURCE)
     @IntDef(HOSPITALS_LIST, CLINICS_LIST, GP_SURGERIES_LIST, DENTAL_LIST, PHARMACIES_LIST, SOCIAL_CARE_LIST, SETTINGS, FEEDBACK)
@@ -53,8 +54,6 @@ class MainNavigation(activity: MainActivity, savedInstanceState: Bundle?) {
                 .withOnDrawerItemClickListener(activity)
                 // build only the view of the Drawer (don't inflate it automatically in our layout which is done with .build())
                 .build()
-
-
     }
 
     fun saveInstanceState(outState: Bundle?): Bundle {
