@@ -6,4 +6,9 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="fab_button_size">60dp</dimen>
+
+    <dimen name="custom_hospital_details_item_details_image_size">32dp</dimen>
+    <dimen name="hospital_details_fragment_details_panel_margin_top">32dp</dimen>
 </resources>

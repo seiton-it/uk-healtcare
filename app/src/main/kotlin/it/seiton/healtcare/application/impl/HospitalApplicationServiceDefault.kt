@@ -2,7 +2,6 @@ package it.seiton.healtcare.application.impl
 
 import it.seiton.healtcare.application.HospitalsApplicationService
 import it.seiton.healtcare.domain.model.HospitalEntity
-import it.seiton.healtcare.domain.model.HospitalMapper
 import it.seiton.healtcare.domain.model.HospitalModel
 import it.seiton.healtcare.domain.repository.HospitalRepository
 import it.seiton.library.infrastructure.sql.Sort
@@ -15,5 +14,9 @@ class HospitalApplicationServiceDefault(val hospitalRepository: HospitalReposito
 
     override fun getAllHospitals(): Observable<List<HospitalEntity>> {
         return hospitalRepository.findAll(Sort(HospitalModel.ORGANISATIONNAMELOWERCASE))
+    }
+
+    override fun getHospital(id: Int): Observable<HospitalEntity?> {
+        return hospitalRepository.findById(id)
     }
 }

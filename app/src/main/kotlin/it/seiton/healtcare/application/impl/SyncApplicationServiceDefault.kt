@@ -48,11 +48,12 @@ class SyncApplicationServiceDefault(app: HealtcareApp, val config: Config, val a
         // data has been deleted. (Note that it's possible to clear app data WITHOUT affecting
         // the account list, so wee need to check both.)
         if (newAccount || !setupComplete) {
-            requestSyncImmediate()
+            //requestSyncImmediate()
             PreferenceManager.getDefaultSharedPreferences(app).edit().putBoolean(PREF_SETUP_COMPLETE, true).commit()
         }
     }
 
+    @Synchronized
     override fun requestSyncImmediate() {
         Timber.tag(TAG).d("reqest sync immediate ....")
         val b = Bundle()
@@ -70,21 +71,22 @@ class SyncApplicationServiceDefault(app: HealtcareApp, val config: Config, val a
         Timber.tag(TAG).d("Sync ...")
         Timber.tag(TAG).d("Thread name : %s", Thread.currentThread().name)
 
-       /* api.getAllHospitals()
 
-                .map { r ->
-                    r.result
-                            .filter { it -> !TextUtils.isEmpty(it.organisationName) }
-                            .mapNotNull { r -> hospitalMapper.mapToEntity(r) }
-                }
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
-                .subscribe(
-                        { n ->
-                            hospitalRepository.saveOrUpdate(n)
-                        },
-                        { e -> println("Damn: $e") },
-                        { println("Completed") })*/
+        /* api.getAllHospitals()
+
+                 .map { r ->
+                     r.result
+                             .filter { it -> !TextUtils.isEmpty(it.organisationName) }
+                             .mapNotNull { r -> hospitalMapper.mapToEntity(r) }
+                 }
+                 .observeOn(AndroidSchedulers.mainThread())
+                 .subscribeOn(Schedulers.io())
+                 .subscribe(
+                         { n ->
+                             hospitalRepository.saveOrUpdate(n)
+                         },
+                         { e -> println("Damn: $e") },
+                         { println("Completed") })*/
     }
 
     companion object {

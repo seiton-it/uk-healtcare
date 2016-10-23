@@ -17,14 +17,16 @@ class Config(context: Context) {
     val writeTimeoutSec: Int
     val accountName: String
     val contentProvider: String
+    val tablet: Boolean
 
     init {
         val res = context.resources
 
         this.version = res.getInteger(R.integer.database_version)
         this.name = res.getString(R.string.database_name)
+        this.tablet = res.getBoolean(it.seiton.library.R.bool.tablet)
 
-        this.endpoint = res.getString(R .string.endpoint)
+        this.endpoint = res.getString(R.string.endpoint)
         this.connectTimeoutSec = res.getInteger(R.integer.connect_timeout_sec)
         this.readTimeoutSec = res.getInteger(R.integer.read_timeout_sec)
         this.writeTimeoutSec = res.getInteger(R.integer.write_timeout_sec)

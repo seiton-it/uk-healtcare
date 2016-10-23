@@ -9,14 +9,14 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
 import it.seiton.healtcare.R
 import it.seiton.healtcare.ui.main.clinics.*
 import it.seiton.healtcare.ui.main.hospitals.HospitalsListFragment
-import it.seiton.library.ui.BaseActivity
-import it.seiton.library.ui.BaseFragment
+import it.seiton.library.ui.activity.BaseActivity
+import it.seiton.library.ui.fragment.BaseFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
  * Created by lukasw44 on 17/10/2016.
  */
-class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener, Drawer.OnDrawerItemClickListener {
+class MainActivity : BaseActivity(),  Drawer.OnDrawerItemClickListener {
 
     lateinit var navigation: MainNavigation
 
@@ -30,10 +30,6 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         if (savedInstanceState == null) {
             replaceFragment(HospitalsListFragment.newInstance())
         }
-    }
-
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        throw UnsupportedOperationException("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun onSaveInstanceState(outState: Bundle?) {

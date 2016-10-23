@@ -1,0 +1,10 @@
+<vector android:height="@dimen/custom_hospital_details_item_details_image_size" android:viewportHeight="512.0"
+    android:viewportWidth="512.0" android:width="@dimen/custom_hospital_details_item_details_image_size" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="@color/colorPrimary" android:pathData="M324.1,512H78c-8,0 -14.4,-6.5 -14.4,-14.4v-270.4c0,-4.4 2,-8.5 5.4,-11.2L246.9,72.2c5.3,-4.3 12.8,-4.3 18.1,0l178,143.7c3.4,2.7 5.4,6.9 5.4,11.2v269.7c0,8 -6.5,14.4 -14.4,14.4s-14.4,-6.5 -14.4,-14.4V234.1L256,102L92.4,234.1v249.1h231.7c8,0 14.4,6.5 14.4,14.4C338.5,505.5 332,512 324.1,512z"/>
+    <path android:fillColor="@color/colorPrimary" android:pathData="M481.5,209.8c-3.2,0 -6.4,-1 -9,-3.2L256,32.9L39.6,206.7c-6.2,5 -15.3,4 -20.3,-2.2c-5,-6.2 -4,-15.3 2.2,-20.3L247,3.2c5.3,-4.2 12.8,-4.2 18.1,0l225.5,181c6.2,5 7.2,14.1 2.2,20.3C489.9,208 485.7,209.8 481.5,209.8z"/>
+    <path android:fillColor="@color/colorLightPrimary" android:pathData="M256,207.7m-42.9,0a42.9,42.9 0,1 1,85.9 0a42.9,42.9 0,1 1,-85.9 0"/>
+    <path android:fillColor="@color/colorPrimary" android:pathData="M256,265.1c-31.6,0 -57.4,-25.7 -57.4,-57.4s25.7,-57.4 57.4,-57.4s57.4,25.7 57.4,57.4S287.6,265.1 256,265.1zM256,179.2c-15.7,0 -28.5,12.8 -28.5,28.5s12.8,28.5 28.5,28.5s28.5,-12.8 28.5,-28.5S271.7,179.2 256,179.2z"/>
+    <path android:fillColor="@color/colorLightPrimary" android:pathData="M187.9,325.7h136.1v171.9h-136.1z"/>
+    <path android:fillColor="@color/colorPrimary" android:pathData="M324.1,512H187.9c-8,0 -14.4,-6.5 -14.4,-14.4v-171.9c0,-8 6.5,-14.4 14.4,-14.4h136.1c8,0 14.4,6.5 14.4,14.4v171.9C338.5,505.5 332,512 324.1,512zM202.4,483.2h107.3V340.1H202.4V483.2z"/>
+    <path android:fillColor="@color/colorPrimary" android:pathData="M436.5,165.4c-8,0 -14.4,-6.5 -14.4,-14.4V73.3h-28.5c-8,0 -14.4,-6.5 -14.4,-14.4s6.5,-14.4 14.4,-14.4h42.9c8,0 14.4,6.5 14.4,14.4v92C450.9,158.9 444.4,165.4 436.5,165.4z"/>
+</vector>

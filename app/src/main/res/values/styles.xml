@@ -1,21 +1,56 @@
 <resources>
 
-    <style name="ItemRowPrimary" parent="@android:style/TextAppearance.Medium">
+    <style name="ItemRowPrimary">
         <item name="android:textColor">@color/primaryText</item>
-        <item name="android:typeface">monospace</item>
         <item name="android:textSize">14dp</item>
         <item name="android:maxLines">2</item>
         <item name="android:ellipsize">end</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="ItemRowSecondary" parent="@android:style/TextAppearance.Medium">
+    <style name="ItemRowSecondary">
         <item name="android:textColor">@color/secondaryText</item>
         <item name="android:textSize">12dp</item>
-        <item name="android:typeface">monospace</item>
         <item name="android:maxLines">3</item>
         <item name="android:ellipsize">end</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="DetailsItemContainer">
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:layout_margin">4dp</item>
+    </style>
+
+    <style name="DetailsItemImage">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_margin">4dp</item>
+    </style>
+
+    <style name="DetailsItemText">
+        <item name="android:gravity">center_vertical|left|start</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="DetailsItemAddressText" parent="DetailsItemText">
+        <item name="android:layout_marginLeft">0dp</item>
+    </style>
+
+
+    <style name="TextAppearance.ExpandedTitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">26sp</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/right_in</item>
+        <item name="android:windowExitAnimation">@anim/right_out</item>
+    </style>
+
 </resources>
 
