@@ -5,7 +5,7 @@ Show all hospitals, Social Care Location, Pharmacies etc in UK
 The purpose of the project is create and show a complex (at least in architecture) project entirely written using Kotlin.
 
 <p align="left">
-  <img src="uk-healtcare-phone.gif" alt="Sample" />
+  <img src="uk-healtcare-phone.gif" alt="Sample" style="width: 260px"/>
 </p>
 
 Icons 
