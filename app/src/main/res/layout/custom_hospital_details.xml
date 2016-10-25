@@ -11,8 +11,7 @@
         android:id="@+id/llAddressContainer"
         style="@style/DetailsItemContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/addressImage"

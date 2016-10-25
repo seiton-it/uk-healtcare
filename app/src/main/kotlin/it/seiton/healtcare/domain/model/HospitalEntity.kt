@@ -41,14 +41,14 @@ class HospitalEntity(id: Int, val website: String,
     val cityAndCounty: String
 
     init {
-        if(TextUtils.isEmpty(city)){
+        if(!city.isNullOrEmpty()){
 
-            if(TextUtils.isEmpty(county)){
+            if(county.isNullOrEmpty()){
                 cityAndCounty = city
             }else{
                 cityAndCounty = city + ", " + county.toUpperCase()
             }
-        }else if(!TextUtils.isEmpty(county)){
+        }else if(!county.isNullOrEmpty()){
             cityAndCounty = county.toUpperCase()
         }else{
             cityAndCounty = "-----"

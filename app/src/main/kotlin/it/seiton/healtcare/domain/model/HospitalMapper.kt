@@ -2,9 +2,8 @@ package it.seiton.healtcare.domain.model
 
 import android.content.ContentValues
 import android.database.Cursor
-import android.text.TextUtils
-import it.seiton.library.domain.model.EntityMapper
 import it.seiton.healtcare.infrastructure.api.model.HospitalJsonModel
+import it.seiton.library.domain.model.EntityMapper
 
 /**
  * Created by lukasw44 on 18/10/2016.
@@ -15,14 +14,14 @@ class HospitalMapper : EntityMapper<HospitalJsonModel, HospitalEntity> {
     override fun mapToEntity(json: HospitalJsonModel): HospitalEntity {
 
         val builder: StringBuilder = StringBuilder()
-        if (!TextUtils.isEmpty(json.address1)) {
+        if (!json.address1.isNullOrEmpty()) {
             builder.append(json.address1).append(" ")
         }
 
-        if (!TextUtils.isEmpty(json.address2)) {
+        if (!json.address2.isNullOrEmpty()) {
             builder.append(json.address2).append(" ")
         }
-        if (!TextUtils.isEmpty(json.address3)) {
+        if (!json.address3.isNullOrEmpty()) {
             builder.append(json.address3)
         }
 
@@ -55,8 +54,8 @@ class HospitalMapper : EntityMapper<HospitalJsonModel, HospitalEntity> {
                 json.email,
                 json.county,
                 json.city,
-                if (TextUtils.isEmpty(json.city)) " " else json.city.toLowerCase(),
-                if (TextUtils.isEmpty(json.city)) " " else json.city.substring(0, 1).toUpperCase(),
+                if (json.city.isNullOrEmpty()) " " else json.city.toLowerCase(),
+                if (json.city.isNullOrEmpty()) " " else json.city.substring(0, 1).toUpperCase(),
                 fullAddress,
                 json.address1,
                 json.address2,
