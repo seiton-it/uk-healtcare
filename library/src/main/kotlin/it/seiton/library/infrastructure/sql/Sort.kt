@@ -38,7 +38,6 @@ class Sort(val orders: List<Order>) {
     }
 
     fun getOrdersBy(): String {
-
-        return orders.map { s -> s.getOrderBy() }.joinToString(",")
+        return orders.map(Order::getOrderBy).joinToString(",")
     }
 }
